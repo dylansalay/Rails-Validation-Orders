@@ -1,0 +1,24 @@
+<h1>Please enter account information</h1>
+
+<form action="/account_post" method="post">
+
+    <label for="first_name">First Name:</label>
+    <input id="first_name" type="text" name="account[first_name]">
+
+    <label for="last_name">Last Name:</label>
+    <input id="last_name" type="text" name="account[last_name]">
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" name="account[email]">
+
+    <label for="phone_number">Phone Number:</label>
+    <input id="phone_number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="account[phone_number]">
+
+    <input type="submit" value="Submit">
+
+</form>
+
+
+<% if @account.errors %>
+<%= @account.errors.full_messages %>
+<% end %>
